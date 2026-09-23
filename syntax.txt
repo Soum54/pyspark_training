@@ -1,0 +1,9 @@
+df.orderBy(
+    ["runs", "age"],
+    ascending=[False, True]
+).show()
+or
+df.orderBy(
+    col("runs").desc(),
+    col("age").asc()
+).show()
