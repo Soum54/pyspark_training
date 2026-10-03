@@ -1,0 +1,6 @@
+Test Case 01 : load_kyc_data : PASS
+Test Case 02 : remove_invalid_emails : PASS
+Test Case 03 : filter_review_customers : PASS
+Test Case 04 : risk_score_statistics : FAIL | Expected = Dictionary with min/max/avg/count over non-null scores | Reason = [NOT_COLUMN_OR_STR] Argument `col` should be a Column or str, got float.
+Test Case 05 : city_highest_average_risk : FAIL | Expected = Tuple of city with highest average risk | Reason = [NOT_COLUMN_OR_STR] Argument `col` should be a Column or str, got float.
+Test Case 06 : city_highest_average_risk_tie_empty : PASS
