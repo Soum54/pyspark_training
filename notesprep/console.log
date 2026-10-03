@@ -1,0 +1,90 @@
+xecuting: /home/kasm-user/LearnlyticaAssessments/DataBricksAug/Q016/.venv/bin/python test_runner.py
+📁 Working directory: /home/kasm-user/LearnlyticaAssessments/DataBricksAug/Q016
+[UniversalRunner] Spawning process: /home/kasm-user/LearnlyticaAssessments/DataBricksAug/Q016/.venv/bin/python [ 'test_runner.py' ]
+[UniversalRunner] Current directory: /home/kasm-user/LearnlyticaAssessments/DataBricksAug/Q016
+[UniversalRunner] Process spawned, PID: 2889593
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/03 13:07:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+...FF.
+=================================== FAILURES ===================================
+________________________ test_04_risk_score_statistics _________________________
+spark = <pyspark.sql.session.SparkSession object at 0x7f7b4220dc00>
+    def test_04_risk_score_statistics(spark):
+        def body():
+            df=spark.createDataFrame([(10,),(20,),(None,),(30,)],['risk_score'])
+            got=solution.risk_score_statistics(df)
+            assert got['min_score']==10 and got['max_score']==30, f'Wrong min/max {got}'
+            assert abs(float(got['avg_score'])-20.0)<1e-9 and got['total_customers']==3, f'Wrong avg/count {got}'
+>       _run(4,'risk_score_statistics','Dictionary with min/max/avg/count over non-null scores',body)
+test_configurable_functions.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_configurable_functions.py:20: in _run
+    fn(); _log(no,name,"PASS")
+test_configurable_functions.py:53: in body
+    assert abs(float(got['avg_score'])-20.0)<1e-9 and got['total_customers']==3, f'Wrong avg/count {got}'
+.venv/lib/python3.10/site-packages/pyspark/sql/utils.py:174: in wrapped
+    return f(*args, **kwargs)
+.venv/lib/python3.10/site-packages/pyspark/sql/functions.py:615: in abs
+    return _invoke_function_over_columns("abs", col)
+.venv/lib/python3.10/site-packages/pyspark/sql/functions.py:105: in _invoke_function_over_columns
+    return _invoke_function(name, *(_to_java_column(col) for col in cols))
+.venv/lib/python3.10/site-packages/pyspark/sql/functions.py:105: in <genexpr>
+    return _invoke_function(name, *(_to_java_column(col) for col in cols))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+col = 0.0
+    def _to_java_column(col: "ColumnOrName") -> JavaObject:
+        if isinstance(col, Column):
+            jcol = col._jc
+        elif isinstance(col, str):
+            jcol = _create_column_from_name(col)
+        else:
+>           raise PySparkTypeError(
+                error_class="NOT_COLUMN_OR_STR",
+                message_parameters={"arg_name": "col", "arg_type": type(col).__name__},
+            )
+E           pyspark.errors.exceptions.base.PySparkTypeError: [NOT_COLUMN_OR_STR] Argument `col` should be a Column or str, got float.
+.venv/lib/python3.10/site-packages/pyspark/sql/column.py:65: PySparkTypeError
+______________________ test_05_city_highest_average_risk _______________________
+spark = <pyspark.sql.session.SparkSession object at 0x7f7b4220dc00>
+    def test_05_city_highest_average_risk(spark):
+        def body():
+            df=spark.createDataFrame([('Mumbai',80),('Mumbai',60),('Delhi',75)],['city','risk_score'])
+            got=solution.city_highest_average_risk(df)
+            assert got[0]=='Delhi' and abs(float(got[1])-75.0)<1e-9, f'Unexpected top city {got}'
+>       _run(5,'city_highest_average_risk','Tuple of city with highest average risk',body)
+test_configurable_functions.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_configurable_functions.py:20: in _run
+    fn(); _log(no,name,"PASS")
+test_configurable_functions.py:60: in body
+    assert got[0]=='Delhi' and abs(float(got[1])-75.0)<1e-9, f'Unexpected top city {got}'
+.venv/lib/python3.10/site-packages/pyspark/sql/utils.py:174: in wrapped
+    return f(*args, **kwargs)
+.venv/lib/python3.10/site-packages/pyspark/sql/functions.py:615: in abs
+    return _invoke_function_over_columns("abs", col)
+.venv/lib/python3.10/site-packages/pyspark/sql/functions.py:105: in _invoke_function_over_columns
+    return _invoke_function(name, *(_to_java_column(col) for col in cols))
+.venv/lib/python3.10/site-packages/pyspark/sql/functions.py:105: in <genexpr>
+    return _invoke_function(name, *(_to_java_column(col) for col in cols))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+col = 0.0
+    def _to_java_column(col: "ColumnOrName") -> JavaObject:
+        if isinstance(col, Column):
+            jcol = col._jc
+        elif isinstance(col, str):
+            jcol = _create_column_from_name(col)
+        else:
+>           raise PySparkTypeError(
+                error_class="NOT_COLUMN_OR_STR",
+                message_parameters={"arg_name": "col", "arg_type": type(col).__name__},
+            )
+E           pyspark.errors.exceptions.base.PySparkTypeError: [NOT_COLUMN_OR_STR] Argument `col` should be a Column or str, got float.
+.venv/lib/python3.10/site-packages/pyspark/sql/column.py:65: PySparkTypeError
+=========================== short test summary info ============================
+FAILED test_configurable_functions.py::test_04_risk_score_statistics - pyspark.errors.exceptions.base.PySparkTypeError: [NOT_COLUMN_OR_STR] Argument `col` should be a Column or str, got float.
+FAILED test_configurable_functions.py::test_05_city_highest_average_risk - pyspark.errors.exceptions.base.PySparkTypeError: [NOT_COLUMN_OR_STR] Argument `col` should be a Column or str, got float.
+2 failed, 4 passed in 15.43s
+[UniversalRunner] Process closed with code: 1
+⚠️ Command exited with code 1
+✅ Success! generated: /home/kasm-user/LearnlyticaAssessments/DataBricksAug/Q016/test_report.log
