@@ -29,6 +29,8 @@ def average_wait_by_department(df: DataFrame) -> DataFrame:
 def list_active_departments(df: DataFrame) -> List[str]:
     df=df.filter(col("status")=="ACTIVE")
     df=df.select("department").distinct().orderBy("department").collect()
+    result=[]
     for i in df:
-        return i["department"]
+        result.append(i["department"])
+    return result
 
