@@ -29,6 +29,7 @@ def enrich_settlements(settlements_df: DataFrame, merchants_df: DataFrame) -> Da
     df=df.withColumn("merchant_label",concat_ws("-",col("merchant_name"),col("city")))
     df=df.withColumn("net_amount",col("gross_amount") - col("fee_amount"))
     return df
+    #error
 
 def merchants_without_successful_settlement(merchants_df: DataFrame, settlements_df: DataFrame) -> DataFrame:
     settlements_df=settlements_df.filter(col("settlement_status")=="SUCCESS")
