@@ -1,0 +1,6 @@
+Test Case 01 : define_observation_schema : PASS
+Test Case 02 : load_monitoring_data : PASS
+Test Case 03 : classify_readings : PASS
+Test Case 04 : latest_reading_per_patient : PASS
+Test Case 05 : care_team_alert_summary : FAIL | Expected = Joined Warning/Critical count and avg heart rate | Reason = [NOT_COLUMN_OR_STR] Argument `col` should be a Column or str, got float.
+Test Case 06 : latest_reading_per_patient_modified : PASS
