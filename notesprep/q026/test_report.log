@@ -1,0 +1,6 @@
+Test Case 01 : define_run_schema : PASS
+Test Case 02 : load_bioreactor_data : PASS
+Test Case 03 : compute_run_metrics : FAIL | Expected = unix_timestamp duration, negative cap, yield percentage | Reason = [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `end_ts` cannot be resolved. Did you mean one of the following? [`e`, `s`, `run_id`, `input_mass`, `output_mass`].; 'Project [run_id#79, s#80, e#81, input_mass#82, output_mass#83, CASE WHEN (((unix_timestamp('end_ts, yyyy-MM-dd HH:mm:ss, Some(Etc/UTC), false) - unix_timestamp('start_ts, yyyy-MM-dd HH:mm:ss, Some(Etc/UTC), false)) / 60) < 0) THEN 0 ELSE ((unix_timestamp('end_ts, yyyy-MM-dd HH:mm:ss, Some(Etc/UTC), false) - unix_timestamp('start_ts, yyyy-MM-dd HH:mm:ss, Some(Etc/UTC), false)) / 60) END AS duration_minutes#89] +- LogicalRDD [run_id#79, s#80, e#81, input_mass#82, output_mass#83], false 
+Test Case 04 : join_reactor_metadata : FAIL | Expected = Join plus Unknown facility and reactor label | Reason = [CANNOT_DETERMINE_TYPE] Some of types cannot be determined after inferring.
+Test Case 05 : dense_rank_runs_by_yield : PASS
+Test Case 06 : dense_rank_runs_partition : PASS
