@@ -1,0 +1,7 @@
+=== Streaming Ad Campaign Performance Analytics Test Run at 2026-10-04 13:31:32 ===
+[PASS] Visible Test Case 1 Passed: load_ad_impressions
+[PASS] Visible Test Case 2 Passed: join_campaign_metadata
+[PASS] Visible Test Case 3 Passed: add_engagement_metrics
+[PASS] Visible Test Case 4 Passed: campaign_performance_summary
+[PASS] Visible Test Case 5 Passed: top_n_campaigns_by_spend
+[PASS] Visible Test Case 6 Passed: top_n_campaigns_by_spend_tie
