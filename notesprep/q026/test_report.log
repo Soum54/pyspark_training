@@ -1,0 +1,7 @@
+=== Bioreactor Run Performance Analytics Test Run at 2026-10-04 12:34:51 ===
+[PASS] Visible Test Case 1 Passed: define_run_schema
+[PASS] Visible Test Case 2 Passed: load_bioreactor_data
+[PASS] Visible Test Case 3 Passed: compute_run_metrics
+[PASS] Visible Test Case 4 Passed: join_reactor_metadata
+[PASS] Visible Test Case 5 Passed: dense_rank_runs_by_yield
+[PASS] Visible Test Case 6 Passed: dense_rank_runs_partition
