@@ -1,0 +1,20 @@
+{
+  "assessment_name": "Vaccine Batch Stability Insights",
+  "domain": "Life Sciences - Vaccine Manufacturing",
+  "difficulty": "Easy",
+  "marks": 10,
+  "duration": "10-15 Minutes",
+  "functions": [
+    "load_vaccine_batches",
+    "drop_incomplete_batches",
+    "add_stability_dates",
+    "filter_potency_range",
+    "count_release_ready_batches"
+  ],
+  "test_count": 6,
+  "solution_policy": "trainee stubs only",
+  "import_policy": "any valid PySpark import style; F alias not mandatory",
+  "report_format": "[PASS] Visible Test Case N Passed: name / [FAIL] Visible Test Case N Failed: name with Expected/Actual/Reason/Fix detail lines",
+  "runner_contract": "Candidate logic failures are recorded in test_report.log and do not produce a non-zero process exit code; true runner/report-generation failures may return non-zero.",
+  "qa_gate": "Reference solution must pass all 6 tests in strict QA mode; evaluator imports must not wildcard-import pyspark.sql.functions."
+}
