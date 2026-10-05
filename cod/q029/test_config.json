@@ -1,0 +1,29 @@
+{
+  "assessment_name": "Autonomous Last-Mile Delivery Trip Analytics",
+  "domain": "Autonomous Logistics / Quick Commerce",
+  "difficulty": "Medium",
+  "marks": 20,
+  "duration": "20-25 Minutes",
+  "functions": [
+    "load_delivery_trips",
+    "compute_trip_metrics",
+    "filter_significant_delays",
+    "partner_delay_summary",
+    "highest_average_delay_reason"
+  ],
+  "test_count": 6,
+  "solution_policy": "trainee stubs only",
+  "function_independence": "Every function is evaluated independently; no trainee function may call another trainee function.",
+  "import_policy": "any valid PySpark import style; evaluator uses functions as F and does not wildcard-import pyspark.sql.functions",
+  "report_format": "[PASS] Visible Test Case N Passed: name / [FAIL] Visible Test Case N Failed: name with Expected/Actual/Reason/Fix detail lines",
+  "runner_contract": "Candidate logic failures are recorded in test_report.log and do not produce a non-zero process exit code; true invalid report-generation may return non-zero.",
+  "qa_gate": "Reference solution must pass all 6 tests in strict QA mode before production release.",
+  "test_names": [
+    "load_delivery_trips",
+    "compute_trip_metrics",
+    "filter_significant_delays",
+    "partner_delay_summary",
+    "highest_average_delay_reason",
+    "highest_average_delay_reason_tie_empty"
+  ]
+}
