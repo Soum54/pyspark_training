@@ -1,0 +1,7 @@
+=== Emergency Triage Wait-Time Insights Test Run at 2026-10-05 05:16:32 ===
+[PASS] Visible Test Case 1 Passed: load_inline_triage_data
+[PASS] Visible Test Case 2 Passed: compute_wait_minutes
+[PASS] Visible Test Case 3 Passed: filter_priority_cases
+[PASS] Visible Test Case 4 Passed: average_wait_by_department
+[PASS] Visible Test Case 5 Passed: list_active_departments
+[PASS] Visible Test Case 6 Passed: list_active_departments_modified
