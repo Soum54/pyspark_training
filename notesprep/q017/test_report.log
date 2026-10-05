@@ -1,6 +1,0 @@
-Test Case 01 : load_inline_triage_data : PASS
-Test Case 02 : compute_wait_minutes : PASS
-Test Case 03 : filter_priority_cases : PASS
-Test Case 04 : average_wait_by_department : PASS
-Test Case 05 : list_active_departments : PASS
-Test Case 06 : list_active_departments_modified : PASS
