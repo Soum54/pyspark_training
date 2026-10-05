@@ -1,0 +1,7 @@
+=== EV Battery Swap Consumption Insights Test Run at 2026-10-05 17:02:35 ===
+[PASS] Visible Test Case 1 Passed: load_battery_swap_data
+[PASS] Visible Test Case 2 Passed: add_swap_month
+[PASS] Visible Test Case 3 Passed: filter_valid_swaps
+[PASS] Visible Test Case 4 Passed: monthly_battery_energy
+[PASS] Visible Test Case 5 Passed: top_battery_type
+[PASS] Visible Test Case 6 Passed: top_battery_type_tie_empty
